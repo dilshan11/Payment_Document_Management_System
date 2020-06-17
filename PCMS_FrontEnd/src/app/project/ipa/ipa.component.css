@@ -1,0 +1,35 @@
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100px; /* Full width (cover the whole page) */
+    height: 50px; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    background-color: rgb(1, 196, 255); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+ a:hover{
+    text-decoration: none;
+
+ }
+ a:active{
+   text-decoration: none;
+ }
+ .divborder{
+   border: solid rgba(255,255,255,0.5);
+ }
+ .navitem{
+  width: 80px;
+  margin-top: 45px;
+  padding-left: 15px;
+  
+}
+.navtext{
+  font-size: 11px;
+  padding-left: 3px;
+  
+  
+}

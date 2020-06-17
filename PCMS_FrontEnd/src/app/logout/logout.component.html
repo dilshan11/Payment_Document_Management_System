@@ -1,0 +1,69 @@
+ 
+<div class="dropdown dropleft">
+    <button type="button" class="btn btn-primary rounded-circle bg-dark border-0 " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >{{admin_name_fword}}</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item"  (click)="change_password(lunch)">Chage Password</a>
+      <a class="dropdown-item" routerLink="" >Log OUT</a>
+       
+    </div>
+  </div>
+ 
+<!-- Button trigger modal -->
+<button type="button" #lunch class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="display: none;">
+     
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content ">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title" id="exampleModalLongTitle">change password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="chpassword">
+                <div class="form-group row">
+                  <label  for="OldPassword" class="col-sm-5 col-form-label  text-center">old password</label>
+                  <div class="col-sm-7">
+                    <input formControlName="oldpassword" type="password" class="form-control" id="OldPassword" placeholder="OldPassword" [ngClass]="{ 'is-invalid': submit && chp.oldpassword.errors }">
+                    <div *ngIf="submit && chp.oldpassword.errors" class="invalid-feedback">
+                      <div *ngIf="chp.oldpassword.errors.required">Old password is required</div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label  for="NewPassword" class="col-sm-5 col-form-label  text-center">New password</label>
+                  <div class="col-sm-7">
+                    <input formControlName="newpassword" type="password" class="form-control" id="NewPassword" placeholder="NewPassword" [ngClass]="{ 'is-invalid': submit && chp.newpassword.errors }">
+                    <div *ngIf="submit && chp.newpassword.errors" class="invalid-feedback">
+                      <div *ngIf="chp.newpassword.errors.required">New password is required</div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label  for="ConfirmPassword" class="col-sm-5 col-form-label  text-center">Confirm password</label>
+                  <div class="col-sm-7">
+                    <input  formControlName="confirmpassword" type="password" class="form-control" id="ConfirmNewPassword" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submit && chp.confirmpassword.errors }">
+                    <div *ngIf="submit && chp.confirmpassword.errors" class="invalid-feedback">
+                      <div *ngIf="chp.confirmpassword.errors.required">Confirme password is required</div>
+                  </div>
+                  </div>
+                </div>
+                <div *ngIf="!correctness"  class="list-group-item list-group-item-danger">
+                  <p class="text-center text-danger"> password is not match</p>
+                </div>
+                <div *ngIf="!passcorrect"  class="list-group-item list-group-item-danger">
+                  <p class="text-center text-danger">old password is not correct</p>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" #close class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="save_changes(close)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

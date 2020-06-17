@@ -1,0 +1,21 @@
+.scrolly{
+    height: 240px;
+  
+  overflow-y: scroll; 
+}
+.center{
+  text-align: center;
+}
+.barchart{
+  width: 180px;
+ margin-left:20px;
+}
+
+.main_nav{
+  background-color: #FFFFFF; 
+  height: 120px;
+   position: sticky;
+   top: 0;
+   overflow-y: auto;
+   z-index: 1;
+}

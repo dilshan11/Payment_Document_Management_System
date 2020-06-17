@@ -1,0 +1,152 @@
+ 
+ 
+<div style="width:100%;height: 800px" >
+    <div class="container-fluid main_nav">
+      <div class="row">
+        <div class="col-md-12 d-flex" style="height: 110px;border-bottom-style: solid;">
+            <div *ngIf="projectNew" class="navitem" (click)="newfunction(new,title,sav,clo,edt,del)">
+                <img src="../../../assets/icons/New .png" class="img-fluid   " alt="Responsive image">
+                <p class="navtext">New</p>
+            </div>
+            <div  *ngIf="projectView" class="navitem " (click)="viewfunction(new,title,sav,clo,edt,del)">
+                <img src="../../../assets/icons/view.png" class="img-fluid  navimg" alt="Responsive image">
+                <p class="navtext">View</p>
+            </div>
+            <div  *ngIf="projectEdit" class="navitem  " (click)="editfunction(new,title,sav,clo,edt,del)">
+                <img src="../../../assets/icons/edit.png" class="img-fluid  navimg" alt="Responsive image">
+                <p class="navtext">Edit</p>
+            </div>
+            <div  *ngIf="projectDelete" class="navitem  ">
+                <img src="../../../assets/icons/delete.png" (click)="deletefunction(new,title,sav,clo,edt,del)" class="img-fluid   navimg" alt="Responsive image">
+                <p class="navtext">Delete</p>
+            </div>
+            
+            
+            <div class="ml-auto mt-5" >
+  
+          <app-logout></app-logout>
+
+         </div>
+        </div>
+            
+      </div> 
+    </div> 
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-3 d-flex">
+                <p class="mr-2">show</p>
+                 <form action="">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          10
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" >10</a>
+                          <a class="dropdown-item" >20</a>
+                          <a class="dropdown-item" >50</a>
+                        </div>
+                      </div>
+                 </form>
+                 <p class="ml-2">entries</p>
+            </div>
+            <div class="col-md-6">
+                <!-- <h1>qw1</h1> -->
+           </div>
+            <div class="col-md-3">
+                <form action="">
+                <input style="width: 100px;" type="text" class="form-control" placeholder="search" aria-label="Username" aria-describedby="basic-addon1">
+            </form>
+           </div>
+            
+        </div>
+    </div> 
+
+    <!-- Button trigger modal -->
+<button #new style="display: none;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 #title class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="addproject">
+                <div class="form-group row">
+                  <label  for="OldPassword" class="col-sm-5 col-form-label  text-center">Project Code</label>
+                  <div class="col-sm-7">
+                    <input formControlName="procode" type="text" class="form-control " id="OldPassword" [ngClass]="{ 'is-invalid': pro_submit && pro.procode.errors }"   >
+                    <div *ngIf="pro_submit && pro.procode.errors" class="invalid-feedback" >
+                        <div *ngIf="pro.procode.errors.required">Project code is required</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label  for="NewPassword" class="col-sm-5 col-form-label  text-center">Project Name</label>
+                  <div class="col-sm-7">
+                    <input formControlName="proname" type="text" class="form-control" id="NewPassword"  [ngClass]="{ 'is-invalid': pro_submit && pro.proname.errors }">
+                    <div *ngIf="pro_submit && pro.proname.errors" class="invalid-feedback" >
+                        <div *ngIf="pro.proname.errors.required"> Project Name is required</div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="form-group row">
+                    <label  for="Contact Number" class="col-sm-5 col-form-label  text-center">Project Description</label>
+                    <div class="col-sm-7">
+                      <input formControlName="prodescription"  type="text" class="form-control" id="Contact Number"  [ngClass]="{ 'is-invalid': pro_submit && pro.prodescription.errors }" >
+                      <div *ngIf="pro_submit && pro.prodescription.errors" class="invalid-feedback" >
+                        <div *ngIf="pro.prodescription.errors.required">Project Description is required</div>
+                    </div>
+                    </div>
+                  </div>
+               
+              </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button #clo  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button #sav type="submit" class="btn btn-primary" (click)="save_changes(new)">Save changes</button>
+          <button #edt type="button" class="btn btn-primary" (click)="edit_save(new)">Save editted</button>
+          <button #del type="button" class="btn btn-primary" (click)="delete_save(new)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 20px;">
+                <table class="table table-bordered table-hover ">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col" style="display: none;">id</th>
+                        <th scope="col">Project Code</th>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Project Description</th>
+                         
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr #trow *ngFor="let pro of project" (click)="getrowdata(pro,trow)" (dblclick)="func2(pro)">
+                        <!-- <td *ngFor="let p of pro"> {{p}}</td> -->
+                        <td>{{pro.code}}</td>
+                        <td>{{pro.name}}</td>
+                        <td>{{pro.description}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                  
+                   
+            </div>
+        </div>
+    </div>
+</div>

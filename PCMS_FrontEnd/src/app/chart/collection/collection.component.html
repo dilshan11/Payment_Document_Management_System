@@ -1,0 +1,45 @@
+<div style="width:100%;height: 800px" >
+    <div class="container-fluid main_nav">
+      <div class="row">
+        <div class="col-md-12 d-flex" style="height: 110px;border-bottom-style: solid;">
+           
+            <div class="ml-auto mt-5" >
+  
+                <app-logout></app-logout>
+
+            </div>
+        </div>
+            
+      </div> 
+    </div> 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mt-5" >
+                 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6
+            " >
+                 <div class="scrolly">
+                    <div class="list-group">
+                        
+                        <a #list class="list-group-item list-group-item-action" *ngFor="let a of project$|async" (click)="select(list,a._id)">{{a.name}}</a>
+              
+                    </div>
+                 </div>
+            </div>
+            <div class="col-md-2 bg-info ">
+                <h6 class="center"> IPA CERTIFIED DELAY & PAYMENT RECEIVED DELAY</h6>
+                <img [routerLink]="['../barcharts/',pid]"  src="../../../assets/icons/bar.png" alt="..." class="img-thumbnail barchart">
+            </div>
+            <div class="col-md-2 bg-warning ">
+                w
+             </div>
+             <div class="col-md-2 bg-info ">
+                w
+             </div>
+        </div>
+    </div>
+</div>
+ 

@@ -1,0 +1,83 @@
+ 
+
+<div class="container-fluid" >
+    <!-- frist page top -->
+    <div class="row"> 
+        <div class="col-md-12 fristdiv">
+            
+        </div>
+    </div>
+    <!-- second half backgroung image -->
+    <div id="overlay">
+    <div class="row"> 
+       
+        <div class="col-md-12 seconddiv">
+            <p class="seconddivword"  >
+                WELCOME TO THE  PAYMENT<br> DOCUMENT MANAGEMENT<br>SYSTEM
+            </p>
+            <p class="seconddivwordafter">powered by NEM Engineering & Research unit</p>
+        <div class="wrapper" data-toggle="modal" data-target="#exampleModal" >
+            <P class="entry">ENTRY</P>
+        </div>
+        </div>
+    
+    </div>
+</div>
+    <!-- last font -->
+    <div class="row"> 
+        <div class="col-md-12 thriddiv" >
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div   class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" #modal>
+            <form [formGroup]="login">
+                <div class="form-group">
+                  <input type="text" formControlName="uname" placeholder="user name" class="form-control" [ngClass]="{ 'is-invalid': submit && f.uname.errors }">
+                  <div *ngIf="submit && f.uname.errors" class="invalid-feedback">
+                    <div *ngIf="f.uname.errors.required">User Name is required</div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input formControlName="password" type="password" placeholder="password" class="form-control" id="recipient-name" [ngClass]="{ 'is-invalid': submit && f.password.errors }">
+                    <div *ngIf="submit && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">password is required</div>
+                  </div>
+                  <!-- <div *ngIf="loginstatus" style="background-color: red; margin-top: 5px;">
+                    user name or password is correct
+                  </div> -->
+
+                  <div *ngIf="loginstatus"  class="list-group-item list-group-item-danger mt-2">
+                    <p class="text-center text-danger"> user name or password is correct</p>
+                  </div>
+
+                </div>
+               
+              </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button #clo type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <button  type="submit" class="btn btn-primary" (click)="onSubmit(clo)">SIGN IN</button>
+        </div>
+      </div>
+    </div>
+  </div>

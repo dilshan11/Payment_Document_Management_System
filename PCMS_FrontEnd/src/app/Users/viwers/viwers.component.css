@@ -1,0 +1,29 @@
+.navitem{
+    width: 80px;
+    margin-top: 45px;
+    padding-left: 15px;
+    
+}
+.navtext{
+    font-size: 11px;
+    padding-left: 3px;
+    
+    
+}
+.navimg{
+   
+}
+/* a:active{
+   background-color: blue;
+} */
+.table-hover> tbody> tr:hover td{
+    background-color:yellow;
+}
+.main_nav{
+    background-color: #FFFFFF; 
+    height: 120px;
+     position: sticky;
+     top: 0;
+     /* overflow-y: auto; */
+     z-index: 1;
+  }

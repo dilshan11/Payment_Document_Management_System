@@ -1,0 +1,189 @@
+ 
+ <div style="width:100%;height: 800px" >
+    <div class="container-fluid main_nav">
+      <div class="row">
+        <div class="col-md-12 d-flex" style="height: 110px;border-bottom-style: solid;">
+         <div class="ml-auto mt-5" >
+  
+          <app-logout></app-logout>
+
+         </div>
+        </div>
+            
+      </div> 
+    </div> 
+    
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-3 d-flex">
+                <p class="mr-2">show</p>
+                 <form action="">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          10
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" >10</a>
+                          <a class="dropdown-item" >20</a>
+                          <a class="dropdown-item" >50</a>
+                        </div>
+                      </div>
+                 </form>
+                 <p class="ml-2">entries</p>
+            </div>
+            <div class="col-md-6">
+                <!-- <h1>qw1</h1> -->
+           </div>
+            <div class="col-md-3">
+                <form action="">
+                <input style="width: 100px;" type="text" class="form-control" placeholder="search" aria-label="Username" aria-describedby="basic-addon1">
+            </form>
+           </div>
+            
+        </div>
+        <div class="row">
+          <div  style="overflow-x: scroll;">
+            <div class="col-md-12" style="margin-top: 20px;">
+                <!-- <div  style="overflow-x: scroll;"> -->
+                    <h1>asasasasa</h1>
+                <table  class="table table-bordered table-hover text-center">
+                    <tr>
+                        <th>User</th>
+                        <th>Position</th>
+                        <th colspan="4">Project</th>
+                        <th colspan="4">Project Table</th>
+                        <th colspan="4">Charts</th>
+                        <th colspan="7">Users</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>New</th>
+                        <th>Edit</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                        <th>New</th>
+                        <th>Save</th>
+                        <th>Email</th>
+                        <th>Excel</th>
+                        <th>1 chart</th>
+                        <th>2 chart</th>
+                        <th>3 chart</th>
+                        <th>4 chart</th>
+                        <th>New</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>User Permission</th>
+                        <th>Project Assigning</th>
+                        <th>Excel</th>
+
+                </tr>
+
+                <tr *ngFor="let user of users;let rid=index">
+                    <td>{{user.name}}</td>
+                    <td>{{user.category}}</td>
+
+                    <!-- project assiging -->
+                    <td>
+                        
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_project',0)"  [(ngModel)]="user.permission_project[0]"   type="checkbox" class="form-check-input" id="exampleCheck1" >
+                         
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_project',1)"  [(ngModel)]="user.permission_project[1]"   type="checkbox" class="form-check-input" id="exampleCheck2" >
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_project',2)"  [(ngModel)]="user.permission_project[2]"   type="checkbox" class="form-check-input" id="exampleCheck3" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_project',3)"  [(ngModel)]="user.permission_project[3]"   type="checkbox" class="form-check-input" id="exampleCheck4" >
+
+                    </td>
+                    <!-- end of project assiging -->
+
+                    <!-- project table assign -->
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_projectTable',0)"  [(ngModel)]="user.permission_projectTable[0]"   type="checkbox" class="form-check-input" id="exampleCheck11" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_projectTable',1)"  [(ngModel)]="user.permission_projectTable[1]"   type="checkbox" class="form-check-input" id="exampleCheck12" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_projectTable',2)"  [(ngModel)]="user.permission_projectTable[2]"   type="checkbox" class="form-check-input" id="exampleCheck13" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_projectTable',3)"  [(ngModel)]="user.permission_projectTable[3]"   type="checkbox" class="form-check-input" id="exampleCheck14" >
+
+                    </td>
+                    <!-- end of project table assign -->
+
+                    <!-- charts assign -->
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_charts',0)"  [(ngModel)]="user.permission_charts[0]"   type="checkbox" class="form-check-input" id="exampleCheck14" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_charts',1)"  [(ngModel)]="user.permission_charts[1]"   type="checkbox" class="form-check-input" id="exampleCheck15" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_charts',2)"  [(ngModel)]="user.permission_charts[2]"   type="checkbox" class="form-check-input" id="exampleCheck15" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_charts',3)"  [(ngModel)]="user.permission_charts[3]"   type="checkbox" class="form-check-input" id="exampleCheck15" >
+
+                    </td>
+                    <!-- end of charts -->
+
+                    <!-- user assign -->
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',0)"  [(ngModel)]="user.permission_users[0]"   type="checkbox" class="form-check-input" id="exampleCheck16" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',1)"  [(ngModel)]="user.permission_users[1]"   type="checkbox" class="form-check-input" id="exampleCheck17" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',2)"  [(ngModel)]="user.permission_users[2]"   type="checkbox" class="form-check-input" id="exampleCheck18" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',3)"  [(ngModel)]="user.permission_users[3]"   type="checkbox" class="form-check-input" id="exampleCheck19" >
+
+                    </td>
+                    <td> 
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',4)"  [(ngModel)]="user.permission_users[4]"   type="checkbox" class="form-check-input" id="exampleCheck20" >
+
+                    </td>
+                    <td> 
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',5)"  [(ngModel)]="user.permission_users[5]"   type="checkbox" class="form-check-input" id="exampleCheck21" >
+
+                    </td>
+                    <td>
+                        <input #asd  (change)="check_click($event,user._id,rid,'permission_users',6)"  [(ngModel)]="user.permission_users[6]"   type="checkbox" class="form-check-input" id="exampleCheck22" >
+
+                    </td>
+                    <!-- end user assign -->
+                </tr>
+                   
+               
+                </table>
+
+
+                <!-- </div> -->
+                  
+                   
+            </div>
+          </div>
+            
+        </div>
+    </div>
+ 
+ </div>

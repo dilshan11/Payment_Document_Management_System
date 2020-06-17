@@ -1,0 +1,48 @@
+.fristdiv{
+    height: 40px;
+}
+.seconddiv{
+     
+    height: 620px;
+    /* background-image: url('../../assets/Poster.jpg');
+    background-repeat: no-repeat; */
+    background: linear-gradient(
+                     rgba(20,20,20, .6), 
+                     rgba(20,20,20, .6)),
+                     url('../../assets/Poster.jpg');
+    background-size: 100% 600px;
+}
+/* .thriddiv{
+    height: 40px;
+} */
+.seconddivword{
+   
+    margin-top: 150px;
+    margin-left: 180px;
+    font-size: 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
+.seconddivwordafter{
+    margin-left: 180px;
+    color: white;
+}
+.entry{
+    padding-left: 8px;
+    
+    font-size: 25px;
+    color: rgb(209, 189, 9);
+}
+.wrapper{
+    margin-left: 180px;
+    width: 90px;
+}
+.wrapper:hover{
+    background-color: rgb(19, 148, 235);
+   
+}
+.modal{
+    top: 30px;
+}

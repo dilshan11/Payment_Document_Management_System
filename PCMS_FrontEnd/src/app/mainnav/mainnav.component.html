@@ -1,0 +1,32 @@
+<div  >
+  <div style="width:10%;float: left;" class="position-fixed" >
+    <div class="container-fluid main_nav">
+      <div class="row">
+        <div class="col-md-12 " style="height: 110px;">
+          <div style="height: 110px;">
+            <img style="width: 100px;height: 90px;" routerLink="welcome" src="../assets/pdms.jpeg" alt="">
+          </div>
+          <div #project (click)="colorChange(project,users,charts)" class="d-flex align-items-center" style="height: 60px;" routerLink="project">
+            <img  style="width: 30px;height: 30px;" src="../assets/icons/project.png" alt="">
+            <p class="mt-3">Project</p>
+          </div>
+          <div #users (click)="colorChange(users,charts,project)" class="d-flex align-items-center" style="height: 60px;" routerLink="viwers">
+            <img style="width: 30px;height: 30px;" src="../assets/icons/User.png" alt="">
+            <p class="mt-3">Users</p>
+          </div>
+          <div #charts (click)="colorChange(charts,project,users)" class="d-flex align-items-center" style="height: 60px;" routerLink="collection">
+            <img style="width: 30px;height: 30px;" src="../assets/icons/chart.png" alt="">
+            <p class="mt-3">Charts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 90%;float: right;border-left-style: solid ;"   >
+    <router-outlet></router-outlet>
+  </div>
+
+
+
+</div>
